@@ -1,15 +1,19 @@
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XF.Hello.App_Code;
 
 [assembly: XamlCompilation (XamlCompilationOptions.Compile)]
 namespace XF.Hello
 {
 	public partial class App : Application
 	{
-		public App ()
+        public static Configuracao ConfigVM { get; set; }
+        public App ()
 		{
 			InitializeComponent();
+
+            if (ConfigVM == null) ConfigVM = new Configuracao();
 
 			MainPage = new NavigationPage(new MainPage()); //incluir essa linha
 		}

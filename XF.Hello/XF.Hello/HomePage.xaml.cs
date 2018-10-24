@@ -15,8 +15,14 @@ namespace XF.Hello
 		public HomePage ()
 		{
 			InitializeComponent ();
-		}
 
+            Button btnBack = new Button() { Text = "Voltar" };
+            btnBack.Clicked += async (sender, evrs) => {
+                await Navigation.PopAsync();
+            };
+            rootLayout.Children.Add(btnBack);
+        }
+   
         void OnAlterarIntensidadeSlider(Object sender, EventArgs e)
         {
             var vermelho = sliderVermelho.Value;

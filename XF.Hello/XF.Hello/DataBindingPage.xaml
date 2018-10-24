@@ -3,10 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XF.Hello.DataBindingPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Padding="10">
+            <StackLayout x:Name="painelAluno">
+                <Label Text="{Binding Nome}"/>
+                <Label Text="{Binding Email}"/>
+            </StackLayout>
+            <StackLayout x:Name="painelProfessor">
+                <Label Text="{Binding Nome}"/>
+                <Label Text="{Binding Curso}"/>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
